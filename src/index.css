@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-midnight-950: #080c18;
+    --color-midnight-900: #0d1326;
+    --color-midnight-800: #151d38;
+    --color-midnight-700: #202b52;
+    --color-lavender-300: #c9bcf6;
+    --color-lavender-400: #b8a9e8;
+    --color-lavender-500: #9e8ad8;
+    --color-dusty-pink: #f4a6b8;
+    --color-warm-cream: #fdfaf3;
+    --color-cream-surface: #f7f1e5;
+    --color-star-yellow: #fde047;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #090d1c;
+    color: #fdfaf3;
+    overflow: hidden;
+  }
+}
+
+.font-pixel {
+  font-family: 'Silkscreen', monospace;
+}
+
+.font-serif-dream {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* 2000s Dream OS Window Bevels */
+.retro-window {
+  box-shadow: 
+    0 16px 40px -10px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(184, 169, 232, 0.25),
+    inset 1px 1px 0px rgba(255, 255, 255, 0.18),
+    inset -1px -1px 0px rgba(0, 0, 0, 0.4);
+}
+
+.retro-window-header {
+  background: linear-gradient(90deg, #1e294e 0%, #2f3868 50%, #1e294e 100%);
+  border-bottom: 1px solid rgba(184, 169, 232, 0.25);
+}
+
+.retro-button {
+  box-shadow: 
+    inset 1px 1px 0px rgba(255, 255, 255, 0.35),
+    inset -1px -1px 0px rgba(0, 0, 0, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.retro-button:active {
+  box-shadow: 
+    inset 1px 1px 0px rgba(0, 0, 0, 0.5),
+    inset -1px -1px 0px rgba(255, 255, 255, 0.2);
+  transform: translateY(1px);
+}
+
+.retro-inset {
+  box-shadow: 
+    inset 1px 1px 2px rgba(0, 0, 0, 0.5),
+    inset -1px -1px 0px rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Dream Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1326;
+  border-left: 1px solid rgba(184, 169, 232, 0.15);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27335d;
+  border-radius: 4px;
+  border: 1px solid rgba(184, 169, 232, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #394880;
+}
+
+/* Ambient Pixel Dreamscape Animations */
+@keyframes dreamTwinkle {
+  0%, 100% { opacity: 0.25; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes dreamTwinkleAlt {
+  0%, 100% { opacity: 0.9; transform: scale(1.1); }
+  50% { opacity: 0.2; transform: scale(0.85); }
+}
+
+@keyframes dreamFloatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes dreamFloatGentle {
+  0%, 100% { transform: translate(0px, 0px); }
+  33% { transform: translate(4px, -5px); }
+  66% { transform: translate(-3px, -2px); }
+}
+
+@keyframes fireflyDrift {
+  0%, 100% { transform: translate(0, 0); opacity: 0.2; }
+  25% { transform: translate(6px, -10px); opacity: 0.9; }
+  50% { transform: translate(-5px, -16px); opacity: 0.35; }
+  75% { transform: translate(8px, -6px); opacity: 0.85; }
+}
+
+@keyframes cloudDriftSlow {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-18px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes cloudDriftReverse {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(14px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes chimneySmoke {
+  0% { transform: translate(0, 0) scale(0.8); opacity: 0.75; }
+  50% { transform: translate(3px, -10px) scale(1.15); opacity: 0.45; }
+  100% { transform: translate(8px, -20px) scale(1.5); opacity: 0; }
+}
+
+@keyframes windowBeaconGlow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-dream-twinkle,
+  .animate-dream-twinkle-alt,
+  .animate-dream-float,
+  .animate-firefly,
+  .animate-cloud-drift,
+  .animate-cloud-drift-rev,
+  .animate-smoke,
+  .animate-window-glow {
+    animation: none !important;
+  }
+}
